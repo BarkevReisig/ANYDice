@@ -1,4 +1,4 @@
-import Dice from "../components/Dice.tsx"
+import Dice from "../components/Dice"
 
 export default function Home() {
   return (
