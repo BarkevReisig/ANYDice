@@ -50,10 +50,9 @@ export default function DiceRoller({ updateDiceTotals }) {
 
   return  (
     <div className="">
-      {console.log("rendered DiceRoller")}
       <p className="">Enter the number to roll under:</p>
       <form onSubmit={handleCheckSubmit}>
-        <input type="text" className="bg-gray-400 mt-3 mb-3 w-full"/> 
+        <input type="number" className="bg-gray-400 mt-3 mb-3 w-full"/> 
         <br/>
         <input type="submit" value="Roll Dice" className="bg-gray-400"/>
         <div className="float-right">

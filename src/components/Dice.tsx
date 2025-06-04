@@ -14,10 +14,16 @@ export default function Dice() {
     setRollCount(rollCount + 1);
   }
 
+  function resetStats(): void {
+    setRollResultTotal(0);
+    setDegreesTotal(0);
+    setRollCount(0);
+  }
+
   return(
     <div className="grid grid-cols-1 justify-items-left lg:mx-42 mx-1">
       <DiceRoller updateDiceTotals={updateDiceTotals}/>
-      <Stats rollResultTotal={rollResultTotal} degreesTotal={degreesTotal} rollCount={rollCount}/>
+      <Stats rollResultTotal={rollResultTotal} degreesTotal={degreesTotal} rollCount={rollCount} resetStats={resetStats}/>
     </div>
   );
 }
