@@ -4,13 +4,20 @@ import DiceRoller from "./DiceRoller";
 import Stats from "./Stats";
 
 export default function Dice() {
-  const [rollValueTotal, setRollValueTotal] = useState();
-  const [rollCount, setRollCount] = useState();
+  const [rollResultTotal, setRollResultTotal] = useState(0);
+  const [degreesTotal, setDegreesTotal] = useState(0);
+  const [rollCount, setRollCount] = useState(0);
+
+  function updateDiceTotals(rollResult: number, degrees: number): void {
+    setRollResultTotal(rollResultTotal + rollResult);
+    setDegreesTotal(degreesTotal + degrees);
+    setRollCount(rollCount + 1);
+  }
 
   return(
     <div className="grid grid-cols-1 justify-items-left lg:mx-42 mx-1">
-      <DiceRoller/>
-      <Stats/>
+      <DiceRoller updateDiceTotals={updateDiceTotals}/>
+      <Stats rollResultTotal={rollResultTotal} degreesTotal={degreesTotal} rollCount={rollCount}/>
     </div>
   );
 }

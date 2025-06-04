@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DiceRollResults from "./DiceRollResults";
 
-export default function DiceRoller() {
+export default function DiceRoller({ updateDiceTotals }) {
   const [rollResult, setRollResult] = useState();
   const [success, setSuccess] = useState();
   const [degrees, setDegrees] = useState();
@@ -45,11 +45,12 @@ export default function DiceRoller() {
     setSuccess(success);
     setDegrees(degrees);
     setCrit(crit);
+    updateDiceTotals(rollResult, degrees);
   }
 
   return  (
     <div className="">
-      {console.log("rendered")}
+      {console.log("rendered DiceRoller")}
       <p className="">Enter the number to roll under:</p>
       <form onSubmit={handleCheckSubmit}>
         <input type="text" className="bg-gray-400 mt-3 mb-3 w-full"/> 
