@@ -1,5 +1,6 @@
 
-export default function DiceRollResults({ rollResult, success, degrees, crit }) {
+export default function DiceRollResults({ rollResult, success, degrees, crit }:
+  { rollResult: number | undefined, success: boolean, degrees: number, crit: boolean }) {
   // Don't display if no roll has been made.
   if (typeof rollResult !== "number") return null;
 

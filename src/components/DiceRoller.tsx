@@ -1,14 +1,19 @@
 import { useState } from "react";
 import DiceRollResults from "./DiceRollResults";
 
-export default function DiceRoller({ updateDiceTotals }) {
-  const [rollResult, setRollResult] = useState();
-  const [success, setSuccess] = useState();
-  const [degrees, setDegrees] = useState();
-  const [crit, setCrit] = useState();
+export default function DiceRoller({ updateDiceTotals }: 
+  {updateDiceTotals: (rollResult: number, degrees: number) => void }) {
+  const [rollResult, setRollResult] = useState<number>();
+  const [success, setSuccess] = useState<boolean>(false);
+  const [degrees, setDegrees] = useState<number>(0);
+  const [crit, setCrit] = useState<boolean>(false);
   
-  function handleCheckSubmit(event): void {
+  function handleCheckSubmit(event: any/*React.FormEvent<HTMLFormElement>*/): void {
     event.preventDefault()
+    console.log(event);
+    // Null check
+    if (!event.target) return;
+    // Ensure value is a number before making the skill check.
     if (event.target[0].value) makeCheck(event.target[0].value);
   }
   
@@ -54,7 +59,7 @@ export default function DiceRoller({ updateDiceTotals }) {
       <form onSubmit={handleCheckSubmit}>
         <input type="number" className="bg-gray-400 mt-3 mb-3 w-full"/> 
         <br/>
-        <input type="submit" value="Roll Dice" className="bg-gray-400"/>
+        <button type="submit" className="bg-gray-400">Roll Dice</button>
         <div className="float-right">
           <DiceRollResults rollResult={rollResult} success={success} degrees={degrees} crit={crit}/>
         </div>

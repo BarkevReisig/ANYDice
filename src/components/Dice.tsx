@@ -4,9 +4,9 @@ import DiceRoller from "./DiceRoller";
 import Stats from "./Stats";
 
 export default function Dice() {
-  const [rollResultTotal, setRollResultTotal] = useState(0);
-  const [degreesTotal, setDegreesTotal] = useState(0);
-  const [rollCount, setRollCount] = useState(0);
+  const [rollResultTotal, setRollResultTotal] = useState<number>(0);
+  const [degreesTotal, setDegreesTotal] = useState<number>(0);
+  const [rollCount, setRollCount] = useState<number>(0);
 
   function updateDiceTotals(rollResult: number, degrees: number): void {
     setRollResultTotal(rollResultTotal + rollResult);
