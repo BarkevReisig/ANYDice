@@ -1,5 +1,5 @@
 import Dice from "../components/Dice";
-import NoSsr from "../components/NoSSR";
+import NoSsr from "../components/NoSsr";
 
 export default function Home() {
   return (

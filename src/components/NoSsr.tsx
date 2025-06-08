@@ -7,7 +7,7 @@ import React from 'react'
  * Surround component that should only render on client with this component.
  */
 
-const NoSsr = (props: any) => (
+const NoSsr = (props: unkown) => (
   <React.Fragment>{props.children}</React.Fragment>
 )
 
