@@ -1,2 +1,4 @@
 # ANYDice
-Dice roller app for the ANYScape ttrpg
+Dice roller web app for the ANYScape ttrpg
+
+[Link to app](anydice.pages.dev)
