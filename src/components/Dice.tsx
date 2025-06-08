@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react";
+import { useLocalStorage } from "react-use";
 import DiceRoller from "./DiceRoller";
 import Stats from "./Stats";
 
@@ -9,9 +10,12 @@ export default function Dice() {
   const [rollCount, setRollCount] = useState<number>(0);
 
   function updateDiceTotals(rollResult: number, degrees: number): void {
-    setRollResultTotal(rollResultTotal + rollResult);
-    setDegreesTotal(degreesTotal + degrees);
-    setRollCount(rollCount + 1);
+    const newRollResultTotal = rollResultTotal + rollResult;
+    const newDegreesTotal = degreesTotal + degrees; 
+    const newRollCount = rollCount + 1;
+    setRollResultTotal(newRollResultTotal);
+    setDegreesTotal(newDegreesTotal);
+    setRollCount(newRollCount);
   }
 
   function resetStats(): void {

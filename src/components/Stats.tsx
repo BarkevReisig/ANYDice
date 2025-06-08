@@ -1,6 +1,13 @@
+"use client"
 
-export default function Stats({ rollResultTotal, degreesTotal, rollCount, resetStats }:
-  { rollResultTotal: number, degreesTotal: number, rollCount: number, resetStats: () => void }) {
+type StatsProps = {
+  rollResultTotal: number;
+  degreesTotal: number;
+  rollCount: number;
+  resetStats: () => void;
+}
+
+export default function Stats({ rollResultTotal, degreesTotal, rollCount, resetStats }: StatsProps) {
   let averageResult: number = rollResultTotal / rollCount;
   let averageDegrees: number = degreesTotal / rollCount;
 

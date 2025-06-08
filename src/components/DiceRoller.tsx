@@ -1,18 +1,19 @@
+"use client"
 import { useState } from "react";
 import DiceRollResults from "./DiceRollResults";
 
-export default function DiceRoller({ updateDiceTotals }: 
-  {updateDiceTotals: (rollResult: number, degrees: number) => void }) {
-  const [rollResult, setRollResult] = useState<number>();
+type DiceRollerProps = {
+  updateDiceTotals: (rollResult: number, degrees: number) => void;
+}
+
+export default function DiceRoller({ updateDiceTotals }: DiceRollerProps) {
+  const [rollResult, setRollResult] = useState<number | undefined>(undefined);
   const [success, setSuccess] = useState<boolean>(false);
   const [degrees, setDegrees] = useState<number>(0);
   const [crit, setCrit] = useState<boolean>(false);
   
   function handleCheckSubmit(event: any/*React.FormEvent<HTMLFormElement>*/): void {
     event.preventDefault()
-    console.log(event);
-    // Null check
-    if (!event.target) return;
     // Ensure value is a number before making the skill check.
     if (event.target[0].value) makeCheck(event.target[0].value);
   }
