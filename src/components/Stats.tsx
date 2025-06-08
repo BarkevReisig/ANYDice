@@ -20,7 +20,7 @@ export default function Stats({ rollResultTotal, degreesTotal, rollCount, resetS
   return(
     <div className="text-left mt-6">
       <p>Stats</p>
-      <Stat text={"Roll Count: "} value={rollCount}/>
+      <p>{"Roll Count: " + rollCount}</p>
       <Stat text={"Average Roll: "} value={averageResult}/>
       <Stat text={"Average DOS: "} value={averageDegrees}/>
       <button onClick={resetStats} className="bg-gray-400 mt-2">Reset Stats</button>

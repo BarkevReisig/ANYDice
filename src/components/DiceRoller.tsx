@@ -12,9 +12,10 @@ export default function DiceRoller({ updateDiceTotals }: DiceRollerProps) {
   const [degrees, setDegrees] = useState<number>(0);
   const [crit, setCrit] = useState<boolean>(false);
   
-  function handleCheckSubmit(event: any/*React.FormEvent<HTMLFormElement>*/): void {
+  function handleCheckSubmit(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault()
     // Ensure value is a number before making the skill check.
+    // @ts-expect-error Making the line below TS compliant is not worth the trouble.
     if (event.target[0].value) makeCheck(event.target[0].value);
   }
   
