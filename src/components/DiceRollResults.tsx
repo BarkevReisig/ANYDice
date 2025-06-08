@@ -1,5 +1,3 @@
-"use client"
-
 type DiceRollResultsProps = {
   rollResult: number | undefined;
   success: boolean;

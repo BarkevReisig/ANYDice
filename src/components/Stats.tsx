@@ -1,5 +1,3 @@
-"use client"
-
 type StatsProps = {
   rollResultTotal: number;
   degreesTotal: number;

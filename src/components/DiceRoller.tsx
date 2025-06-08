@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import DiceRollResults from "./DiceRollResults";
 
@@ -29,7 +29,7 @@ export default function DiceRoller({ updateDiceTotals }: DiceRollerProps) {
     // Roll 1d100 and compare to check threshold.
     // Rolls under or equal to check threshold succeed.
     // Success gives DoS = 10s digit, failure gives DoF = 10 - 10s digit.
-    let rollResult: number = rollDie(100);
+    const rollResult: number = rollDie(100);
     let success: boolean = false;
     let degrees: number = 0;
     let crit: boolean = false;
